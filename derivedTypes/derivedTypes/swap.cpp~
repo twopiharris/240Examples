@@ -1,0 +1,22 @@
+#include <iostream>
+
+// swap.cpp
+// demonstrates swapping with references
+
+using namespace std;
+
+void swap(int& a, int& b){
+  int temp = a;
+  a = b;
+  b = temp;
+} // end swap
+
+
+int main(){
+  int x = 3;
+  int y = 5;
+  swap(x, y);
+  cout << "X: " << x << endl;
+  cout << "Y: " << y << endl;
+  return(0);
+} // end main

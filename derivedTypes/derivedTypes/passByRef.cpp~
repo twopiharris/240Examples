@@ -1,0 +1,21 @@
+#include <iostream>
+
+void addOne(int);
+
+using namespace std;
+
+int main(){
+
+  int alpha = 5;
+  addOne(alpha);
+  cout << "after addOne, alpha is " << alpha << endl;
+
+  addOne(&alpha);
+  cout << "after passing reference, alpha is " << alpha << endl;
+
+} // end main
+  
+
+void addOne(int beta){
+  beta++;
+} // end addOne

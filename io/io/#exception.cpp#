@@ -1,0 +1,24 @@
+//exception handling
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+  int a, b;
+  cout << "A: ";
+  cin >> a;
+  cout << "B: ";
+  cin >>  b;
+  try {
+    float result = a/b;
+    cout << "A / B: " << result << endl;
+  } catch(...) {
+    cout << "Something went wrong..." << endl;
+  } // end catch
+
+  return 0;
+  
+}
+
+

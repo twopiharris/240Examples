@@ -1,0 +1,11 @@
+//stringstream demo
+
+#include <iostream>
+#include <sstream>
+
+int main(){
+  stringstream ss;
+  ss << "I am " << 28 << " years old";
+  cout << ss.str();
+} // end main
+

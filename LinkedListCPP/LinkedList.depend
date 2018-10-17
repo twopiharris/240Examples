@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1289510313 source:c:\documents and settings\ajharris\my documents\240\linkedlist\main.cpp
+	<iostream>
+	"Node.h"
+	"LinkedList.h"
+
+1289497164 c:\documents and settings\ajharris\my documents\240\linkedlist\node.h
+	<string>
+
+1289496648 source:c:\documents and settings\ajharris\my documents\240\linkedlist\node.cpp
+	"Node.h"
+
+1289510363 c:\documents and settings\ajharris\my documents\240\linkedlist\linkedlist.h
+	"Node.h"
+
+1289510406 source:c:\documents and settings\ajharris\my documents\240\linkedlist\linkedlist.cpp
+	<iostream>
+	"LinkedList.h"
+	"Node.h"
+
