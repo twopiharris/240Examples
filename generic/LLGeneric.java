@@ -1,0 +1,87 @@
+/** LLGeneric.java:w
+    doubly-linked list
+*   works with a generic node type
+*/
+
+public class LLGeneric <NodeType>{
+
+  protected NodeGeneric<NodeType> head;
+
+  public static void main(String[] args){
+    //LLGeneric <NodeType> ll = new LLGeneric <NodeType>();
+  } // end main
+
+  public LLGeneric(){
+    head = null;
+  } // end constructor
+
+  public void append(NodeType newValue){
+    //adds new value to end of list
+    NodeGeneric<NodeType> newNode = new NodeGeneric<NodeType>();
+    newNode.setPayload(newValue);
+
+    //move to end of list
+    NodeGeneric<NodeType> currentNode = head;
+    // if we have an empty list, the new element is the head
+    if (currentNode == null){
+      head = newNode;
+    } else {
+      while (currentNode.getNext() != null){
+        currentNode = currentNode.getNext();
+      } // end while: by end, currentNode should be last
+      currentNode.setNext(newNode);
+      newNode.setPrevious(currentNode);
+    } // end if
+  } // end append
+
+  public void iterate(){
+    NodeGeneric<NodeType> currentNode = head;
+    while (currentNode != null){
+      System.out.println(currentNode.getPayload());
+      currentNode = currentNode.getNext();
+    } // end while
+  } // end iterate
+
+  public NodeGeneric<NodeType> search(NodeGeneric <NodeType>target){
+    NodeGeneric<NodeType> currentNode = head;
+    NodeGeneric<NodeType> result = null;
+
+    while (currentNode != null){
+      // may need to overload equals operator
+      if (currentNode.getPayload().equals(target)){
+        result = currentNode;
+      } // end if
+      currentNode = currentNode.getNext();
+    } // end while
+    return result;
+  } // end search
+
+  public void insertAfter(NodeGeneric <NodeType> target, NodeGeneric <NodeType> value){
+    NodeGeneric<NodeType> before = this.search(target);
+    if (before == null){
+      System.out.println("target not found");
+    } else {
+      NodeGeneric <NodeType> after = before.getNext();
+      NodeGeneric <NodeType> newNode = new NodeGeneric<NodeType>();
+      newNode.setPayload(value);
+      newNode.setPrevious(before);
+      newNode.setNext(after);
+
+      before.setNext(newNode);
+      after.setPrevious(newNode);
+    } // end if
+  } // end insertAfter
+
+  public void delete(NodeGeneric <NodeType> target){
+    NodeGeneric <NodeType> targetNode = this.search(target);
+    if (targetNode == null){
+      System.out.println("target not found");
+    } else {
+      NodeGeneric <NodeType> before = targetNode.getPrevious();
+      NodeGeneric <NodeType> after = targetNode.getNext();
+      before.setNext(after);
+      after.setPrevious(before);
+      // target node will be deleted by garbage collector (we hope)
+    } // end if
+  } // end delete
+} // end class def
