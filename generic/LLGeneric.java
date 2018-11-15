@@ -9,6 +9,18 @@ public class LLGeneric <NodeType>{
 
   public static void main(String[] args){
     //LLGeneric <NodeType> ll = new LLGeneric <NodeType>();
+    LLGeneric <String> ll = new LLGeneric <String>();
+    ll.append("A");
+    ll.append("B");
+    ll.append("C");
+    ll.iterate();
+
+    LLGeneric <Integer> li = new LLGeneric <Integer>();
+    li.append(new Integer(1));
+    li.append(new Integer(2));
+    li.append(new Integer(3));
+    li.iterate();
+
   } // end main
 
   public LLGeneric(){
@@ -56,7 +68,7 @@ public class LLGeneric <NodeType>{
     return result;
   } // end search
 
-  public void insertAfter(NodeGeneric <NodeType> target, NodeGeneric <NodeType> value){
+  public void insertAfter(NodeGeneric <NodeType> target, NodeType value){
     NodeGeneric<NodeType> before = this.search(target);
     if (before == null){
       System.out.println("target not found");
