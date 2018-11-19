@@ -1,17 +1,20 @@
 CritterList.class: CritterList.java NodeGeneric.class
-	javac CritterList.java
+	javac -g CritterList.java
 
 LLString.class: LLString.java NodeGeneric.class
-	javac LLString.java
+	javac -g LLString.java
 
 LLGeneric.class: LLGeneric.java NodeGeneric.class
-	javac LLGeneric.java
+	javac -g LLGeneric.java
 
 NodeGeneric.class: NodeGeneric.java
-	javac NodeGeneric.java
+	javac -g NodeGeneric.java
 
 run: CritterList.class
 	java CritterList
 
 clean:
 	rm *.class
+
+debug: CritterList.class
+	jdb CritterList

@@ -13,6 +13,7 @@ public class LLGeneric <NodeType>{
     ll.append("A");
     ll.append("B");
     ll.append("C");
+    ll.insertAfter("B", "T");
     ll.iterate();
 
     LLGeneric <Integer> li = new LLGeneric <Integer>();
@@ -54,13 +55,17 @@ public class LLGeneric <NodeType>{
     } // end while
   } // end iterate
 
-  public NodeGeneric<NodeType> search(NodeGeneric <NodeType>target){
+  public NodeGeneric<NodeType> search(NodeType target){
+    // given a target, returns a node containing that target.
+    // For custom data types, the .equals method may need to be
+    // overwritten to give appropriate results
     NodeGeneric<NodeType> currentNode = head;
     NodeGeneric<NodeType> result = null;
 
     while (currentNode != null){
       // may need to overload equals operator
-      if (currentNode.getPayload().equals(target)){
+     NodeType thisNode = currentNode.getPayload();
+     if (thisNode.equals(target)){
         result = currentNode;
       } // end if
       currentNode = currentNode.getNext();
@@ -68,7 +73,7 @@ public class LLGeneric <NodeType>{
     return result;
   } // end search
 
-  public void insertAfter(NodeGeneric <NodeType> target, NodeType value){
+  public void insertAfter(NodeType target, NodeType value){
     NodeGeneric<NodeType> before = this.search(target);
     if (before == null){
       System.out.println("target not found");
@@ -84,7 +89,7 @@ public class LLGeneric <NodeType>{
     } // end if
   } // end insertAfter
 
-  public void delete(NodeGeneric <NodeType> target){
+  public void delete(NodeType target){
     NodeGeneric <NodeType> targetNode = this.search(target);
     if (targetNode == null){
       System.out.println("target not found");
