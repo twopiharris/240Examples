@@ -7,13 +7,13 @@ using namespace std;
 
 class student {
     private:
-        string name;
+        std::string name;
     public:
-        void setName(string tName){
+        void setName(std::string tName){
             name = tName;
         } // end setName
 
-        string getName(){
+        std::string getName(){
             return name;
         } // end getName
 }; // end class def
@@ -23,6 +23,6 @@ class student {
 main(){
     student s1;
     s1.setName("John");
-    cout << "Name: " << s1.getName() << endl;
+    std::cout << "Name: " << s1.getName() << std::endl;
 
 } // end main

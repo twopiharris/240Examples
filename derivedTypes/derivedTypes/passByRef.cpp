@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 void addOne(int beta){
   beta++;
 } // end addOne
@@ -14,10 +12,10 @@ int main(){
 
   int alpha = 5;
   addOne(alpha);
-  cout << "after addOne, alpha is " << alpha << endl;
+  std::cout << "after addOne, alpha is " << alpha << std::endl;
 
   addOneByRef(alpha);
-  cout << "after passing reference, alpha is " << alpha << endl;
+  std::cout << "after passing reference, alpha is " << alpha << std::endl;
 
 } // end main
   

@@ -18,9 +18,9 @@ main(){
 
     boolean x = False;
     if(x){
-        cout << "True" << endl;
+        std::cout << "True" << std::endl;
     } else {
-        cout << "False" << endl;
+        std::cout << "False" << std::endl;
     } // end if
 } // end main
 

@@ -11,10 +11,10 @@ main(){
     int i = 2;
 
     //what happens when we print out the value of i?
-    cout << "local i: " << i << endl;
+    std::cout << "local i: " << i << std::endl;
 
     //the local variable occludes (hides) the global
 
     //the :: operator resolves to the global scope
-    cout << "global i: " << ::i << endl;
+    std::cout << "global i: " << ::i << std::endl;
 } // end main

@@ -9,11 +9,9 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 struct date{
   int day;
-  string month;
+  std::string month;
   int year;
 };
 
@@ -24,7 +22,7 @@ main(){
     today.month = "Sep";
     today.year = 2010;
 
-    cout << "Day: " << today.day
+    std::cout << "Day: " << today.day
          << ", Month: " << today.month
-         << ", Year: " << today.year << endl;
+         << ", Year: " << today.year << std::endl;
 } // end main

@@ -2,7 +2,6 @@
 //constants and pointers
 
 #include <iostream>
-using namespace std;
 
 main(){
   const int x = 10;     //x is a constant object
@@ -22,7 +21,7 @@ main(){
 
   className = "Advanced Goofiness";
 
-  cout << "class name: " << className << endl;
+  std::cout << "class name: " << className << std::endl;
 
   //Make the array and the members constant with TWO const keywords
 
@@ -33,6 +32,6 @@ main(){
 
   //lang = "Erlang";  // illegal
 
-  //cout << "lang: " << lang << endl;
+  //std::cout << "lang: " << lang << std::endl;
 
 } // end main

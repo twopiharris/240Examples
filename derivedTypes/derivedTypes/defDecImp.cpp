@@ -3,9 +3,6 @@
 #include <iostream>
 #include <string.h>
 
-using namespace std;
-
-
 //Declarations
 //Declare a derived type
 
@@ -43,5 +40,5 @@ main(){
     thingie.p = 5;
     //thingie.q = "Hi";
     strcpy(thingie.q, "Hi");
-    cout << myFunction() << endl;
+    std::cout << myFunction() << std::endl;
 }
