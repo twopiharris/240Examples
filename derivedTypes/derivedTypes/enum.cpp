@@ -4,7 +4,6 @@
 //used to clarify code.
 
 #include <iostream>
-using namespace std;
 
 enum greek {alpha, beta, gamma};
 enum number { one = 1, two, three };

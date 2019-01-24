@@ -1,7 +1,6 @@
 //scopeRes.cpp
 
 #include <iostream>
-using namespace std;
 
 //i is declared globally (outside any functions)
 int i = 1;
