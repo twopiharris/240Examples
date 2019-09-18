@@ -116,30 +116,38 @@ when you want to build a more complex program that involves a lot of different
 files.
 </p>
 
+
 <p>
-So imagine you're building a program that simulates a horse race.  You might
-have a horse class, which contains a cpp file and an h file.  You might also
-have a race class.  The race class has its own cpp and h files, but the 
-race needs to instantiate the horse class. (The race isn't much fun if the
-horses don't show up.) So the race class is dependant on the horse class. 
-If the horse class gets changed, the race class will need to be recompiled
-to handle any differences.  Likewise, it doesn't make sense to compile the race
-if the horse hasn't been compiled yet.  Let's add a main.cpp to tie the whole
-thing together.  Here's all the files we're working with so far:
+So imagine you are building some kind of "Critter Racer" game. You have a Critter
+class, which will be the driver.  Classes in C++ usually are housed in a .cpp file
+and a .h file.  You might also have a "Car" class, which will hold the vehicle the
+critter will drive.  This class will have its own cpp and h files.
+</p>
+
+<p>
+But since the car's driver is a Critter, the car will not make sense without knowing
+at least the structure of the critter, and if the critter's definition changes, 
+the car class will need to be recompiled.
+<p>
+
+<p>
+Likely you'll also have a main class to tie the whole thing together, but this will
+only make sense to compile if everything else is already up to date.
+Here's all the files we have so far:
 </p>
 
 <pre>
 main.cpp
-race.cpp
-race.h
-horse.cpp
-horse.h
+car.cpp
+car.h
+critter.cpp
+critter.h
 </pre>
 
 <p>
-I put those files in a rough order.  You need horse.h to compile horse.cpp, and you 
-need at least a definition of the horse before you can compile the race.cpp. Of course race.cpp
-also needs race.h, and main.cpp won't compile until everything else is working.
+I put those files in a rough order.  You need critter.h to compile critter.cpp, and you 
+need at least a definition of the critter before you can compile the car.cpp. Of course car.cpp
+also needs car.h, and main.cpp won't compile until everything else is working.
 </p>
 
 <p>
@@ -158,14 +166,14 @@ probably need:
 <p>
 
 <pre>
-horseRace: main.o race.o horse.o
-	g++ main.o race.o horse.o -o horseRace
+game: main.o car.o critter.o
+	g++ main.o car.o critter.o -o game
 </pre>
 
 <p>
-What I'm saying here is "I want to build the horseRace target. In order to do this,
-I need working object files for main.o, race.o, and horse.o  If those are in place
-use g++ to link these files together and call the output horseRace."
+What I'm saying here is "I want to build the critterRace target. In order to do this,
+I need working object files for main.o, car.o, and critter.o  If those are in place
+use g++ to link these files together and call the output critterRace."
 </p>
 
 <p>
@@ -174,24 +182,24 @@ The complete first pass of the makefile might look like this:
 </p>
 
 <pre>
-horseRace: main.o race.o horse.o
-	g++ main.o race.o horse.o -o horseRace
+game: main.o car.o critter.o
+	g++ main.o car.o critter.o -o game
 
-main.o: main.cpp race.h horse.h
+main.o: main.cpp car.h critter.h
 	g++ -c main.cpp
 
-race.o: race.cpp race.h horse.h
-	g++ -c race.cpp
+car.o: car.cpp car.h critter.h
+	g++ -c car.cpp
 
-horse.o: horse.cpp horse.h
-	g++ -c horse.cpp
+critter.o: critter.cpp critter.h
+	g++ -c critter.cpp
 
 </pre>
 
 
 <p>
 The targets all make sense when you think about them.  To build main.o, you need main.cpp
-and the header files for the race and the horse (you can compile an object with only the 
+and the header files for the car and the critter (you can compile an object with only the 
 headers, so you can specify .h rather than .o here.)
 </p>
 
@@ -204,7 +212,7 @@ is not critical. Still, it's helpful to go from more general to more specific.
 
 <p>
 If you save this file as "makefile" and run make, the make utility will try to build the
-first target (horseRace.) If this is the first pass, none of the object files will exist,
+first target (critterRace.) If this is the first pass, none of the object files will exist,
 so make will automatically go to any missing targets, check their dependencies, and run them.
 In this way, make will compile only those elements that have changed since the last 
 successful compile, but will ultimately ensure your entire project is compiled.
@@ -214,29 +222,29 @@ successful compile, but will ultimately ensure your entire project is compiled.
 
 <p>
 It's common to also add utility targets to the bottom of your make file.  These targets allow
-you to run various os commands through the make utility.  Here is the completed horseRace with
+you to run various os commands through the make utility.  Here is the completed critterRace with
 two new utility targets added:
 </p>
 
 <pre>
-horseRace: main.o race.o horse.o
-	g++ main.o race.o horse.o -o horseRace
+game: main.o car.o critter.o
+	g++ main.o car.o critter.o -o game
 
-main.o: main.cpp race.h horse.h
+main.o: main.cpp car.h critter.h
 	g++ -c main.cpp
 
-race.o: race.cpp race.h horse.h
-	g++ -c race.cpp
+car.o: car.cpp car.h critter.h
+	g++ -c car.cpp
 
-horse.o: horse.cpp horse.h
-	g++ -c horse.cpp
+critter.o: critter.cpp critter.h
+	g++ -c critter.cpp
 
 clean: 
 	rm *.o
-	rm horseRace
+	rm game
 
-run:	horseRace
-	./horseRace
+run:	game
+	./game
 
 </pre>
 
@@ -253,7 +261,7 @@ as well as the final executable.  To run it, just type "make clean" from the com
 <p>
 It's interesting that clean doesn't have any dependencies.  That's because you can run it any time. 
 It doesn't really matter what you've built before, because you want to delete all of the compiled 
-code.  Be careful not to delete all files with a clean command, because that would destroy your 
+code.  Be careful not to delete<strong> all</strong> files with a clean command, because that would destroy your 
 source code, too!
 </p>
 
@@ -265,7 +273,7 @@ grader can easily run your code without having to figure out which file is execu
 </p>
 
 <p>
-The run target has horseRace (the final version of the program) set as its dependency.  That way, if
+The run target has game (the final version of the program) set as its dependency.  That way, if
 the user tries to run the program and it isn't up to date, the make utility will recompile any 
 necessary components.  
 </p>
@@ -334,12 +342,12 @@ streamlined compilation.
 </p>
 
 <p>
-A complete version of the horseRace makefile might look like this:
+A complete version of the critter game makefile might look like this:
 </p>
 
 <pre>
 
-#makefile for horserace
+#makefile for game
 
 #standard g++ compiler
 CC = g++
@@ -349,24 +357,24 @@ CC = g++
 
 CFLAGS = -g -Wall
 
-horseRace: main.o race.o horse.o
-	$(CC) $(CFLAGS) main.o race.o horse.o -o horseRace
+game: main.o car.o horse.o
+	$(CC) $(CFLAGS) main.o car.o horse.o -o game 
 
-main.o: main.cpp race.h horse.h
+main.o: main.cpp car.h horse.h
 	$(CC) $(CFLAGS) -c main.cpp
 
-race.o: race.cpp race.h horse.h
-	$(CC) $(CFLAGS) -c race.cpp
+car.o: car.cpp car.h horse.h
+	$(CC) $(CFLAGS) -c car.cpp
 
 horse.o: horse.cpp horse.h
 	$(CC) $(CFLAGS) -c horse.cpp
 
 clean: 
 	rm *.o
-	rm horseRace
+	rm game
 
-run:	horseRace
-	./horseRace
+run:	game
+	./game
 
 </pre>
 
@@ -402,8 +410,8 @@ you to the executable target.
 <p>
 If you do not specify the dependencies the makefile will try to guess which
 files it needs by looking in the directory for files that match the targets
-name. So in the example, "Race.o: Race.cpp" and I do not put
-Race.h as a dependency it will look in the directory and include it for you. As
+name. So in the example, "car.o: car.cpp" and I do not put
+car.h as a dependency it will look in the directory and include it for you. As
 a rule of thumb, do we ever want to rely on computers for anything? Especially
 if we have no idea how it works? Please write all of the dependencies and do
 not rely on the makefile to do it for you.
@@ -419,6 +427,14 @@ Makefile on Pegasus/Tesla it will know what you mean and not add that
 extension. If you try to create it outside you may have to remove it manually.
 I suggest turning off hidden file extensions, this way simply deleting it from
 the end of your filename will change it.
+</p>
+
+<p>
+There are a number of tools like cmake and tools that come with C++ IDEs that will
+automatically create make files for you.  While this is a really wonderful thing, 
+you should always be skeptical of any tool that does your job for you.  For this 
+class, you will be expected to build all make files by hand.  Once you understand
+how they work a little better, feel free to investigate these tools.
 </p>
 
 <p>
