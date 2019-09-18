@@ -1,6 +1,6 @@
 /*Car.java Demonstrates inheritance and extension */
 
-public class Car extends Vehicle implements GasPowered {
+public class Car extends Vehicle implements GasPowered, Pickup{
 
   float gasTankSize = 12f;
   float gasAmount = 12f;
@@ -39,6 +39,18 @@ public class Car extends Vehicle implements GasPowered {
   public void steerRight(){
     System.out.println("Going right");
   } // end steerRight
+
+
+  // because I'm a pickup, I also need 
+  // openTailgate() and closeTailgate()
+
+  public void openTailgate(){
+    System.out.println("The dog jumps out");
+  } // end 
+
+  public void closeTailgate(){
+    System.out.println("Clunk!");
+  } // end
 
   public static void main(String[] args){
     // I can have a main because I'm not abstract
