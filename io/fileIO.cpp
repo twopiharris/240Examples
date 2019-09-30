@@ -25,16 +25,33 @@ int main(){
   appFile.close();
 
   //reading from a file
+  // note last line will read as blank
   std::ifstream inFile;
   inFile.open("example.dat");
   std::string item;
   while (!inFile.eof()){
     std::getline(inFile, item);
-    if (item != ""){
-      std::cout << "We need " << item << ", Dude." << std::endl;
+    std::cout << "We need " << item << ", Dude." << std::endl;
+  } // end while
+  inFile.close();
+
+  std::cout << std::endl << std::endl;
+
+  // improve with a keepGoing loop
+
+  inFile.open("example.dat"); 
+  bool keepGoing = true;
+  while (keepGoing){
+    std::getline(inFile, item);
+    if (inFile.eof()){
+      keepGoing = false;
+    } else {
+      std::cout << "getting " << item << std::endl;
     } // end if
   } // end while
   inFile.close();
+
+  std::cout << std::endl << std::endl;
 
 
   //alternate input
