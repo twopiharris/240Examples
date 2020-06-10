@@ -4,7 +4,7 @@
 #include <iostream>
 
 main(){
-  const int x = 10;     //x is a constant object
+  const int x = 15;     //x is a constant object
   //x = 5;                //illegal! x cannot be changed
 
   //array of constant objects

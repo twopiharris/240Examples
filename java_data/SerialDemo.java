@@ -15,7 +15,7 @@ public class SerialDemo {
 	public void saveCritter(){
 		Critter myCritter = new Critter("Lizzie Borden", 1);
 		try {
-			FileOutputStream fo = new FileOutputStream("SerialCritter.txt");
+			FileOutputStream fo = new FileOutputStream("SerialCritter.dat");
 			ObjectOutputStream obOut = new ObjectOutputStream(fo);
 			obOut.writeObject(myCritter);
 		} catch (Exception e){
@@ -26,7 +26,7 @@ public class SerialDemo {
     public void loadCritter(){
     	Critter myCritter;
     	try {
-    		FileInputStream fIn = new FileInputStream("SerialCritter.txt");
+    		FileInputStream fIn = new FileInputStream("SerialCritter.dat");
     		ObjectInputStream obIn = new ObjectInputStream(fIn);
     		myCritter = (Critter)obIn.readObject();
         	System.out.println(myCritter.name);

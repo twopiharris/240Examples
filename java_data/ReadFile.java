@@ -13,8 +13,12 @@ public class ReadFile {
 		  while (input.hasNext()){
 			  System.out.println(input.nextLine() + ", dude!");
 		  } // end while
-	  } catch (IOException e){
+	  	  //theFile.close();
+	  	  input.close();
+	 } catch (IOException e){
 		  System.out.println(e.getMessage());
 	  } // end try
+
+
   } // end constructor
 } // end readFile

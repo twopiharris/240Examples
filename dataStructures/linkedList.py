@@ -9,7 +9,7 @@ class Node(object):
 def iterate(head):
   currentNode = head
   while currentNode != None:
-    print currentNode.data
+    print (currentNode.data)
     currentNode = currentNode.next
 
 def main():

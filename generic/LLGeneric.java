@@ -64,8 +64,8 @@ public class LLGeneric <NodeType>{
 
     while (currentNode != null){
       // may need to overload equals operator
-     NodeType thisNode = currentNode.getPayload();
-     if (thisNode.equals(target)){
+      NodeType thisNode = currentNode.getPayload();
+      if (thisNode.equals(target)){
         result = currentNode;
       } // end if
       currentNode = currentNode.getNext();

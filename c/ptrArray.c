@@ -28,7 +28,9 @@ int main(){
 
   //array is actually a pointer to the first element!
   printf("score for 0: %d\n", *score);
+  // this line actually shows the address of the first element
   printf("score: %d", score);
+  // this line shows the address of the next element (still not useful)
   printf("score + 1: %d", score + 1);
 
   printf("score for 1: %d\n", *(score + 1));

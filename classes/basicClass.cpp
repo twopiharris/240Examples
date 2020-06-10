@@ -33,7 +33,7 @@ class Student {
 main(){
     Student s1;
     std::cout << s1.getName() << std::endl;
-    s1.setName("John");
+    s1.setName("Foo Foo the Great, destroyer of worlds");
     std::cout << "Name: " << s1.getName() << std::endl;
     Student s2 ("Hepzibah");
     std::cout << s2.getName() << std::endl;

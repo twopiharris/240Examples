@@ -15,14 +15,6 @@ public class NodeGeneric <NodeType> {
     this.next = null;
   } // end constructor
 
-/*
-  public NodeGeneric(nodetype payload, NodeGeneric <NodeType> previous, NodeGeneric <NodeType> next){
-    this.payload = payload;
-    this.previous = previous;
-    this.next = next;
-  } // end constructor
-*/
-
   // payload accessors
   public NodeType getPayload(){
     return this.payload;
