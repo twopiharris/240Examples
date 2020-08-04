@@ -15,7 +15,7 @@ main(){
 
   //since it's an array of constant objects,
   //individual elements cannot be changed:
-  //className[0] = R;     //illegal!
+  //className[0] = 'R';     //illegal!
 
   //however, the array itself is NOT constant!
 

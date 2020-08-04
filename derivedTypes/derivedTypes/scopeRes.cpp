@@ -6,6 +6,8 @@
 int i = 1;
 
 main(){
+    std::cout << "The value of i is " << i << std::endl;
+
     //i is also declared (with a different value) inside main!
     int i = 2;
 
