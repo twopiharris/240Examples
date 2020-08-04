@@ -10,15 +10,15 @@ int main(){
 
     char fName[20] = "Andy";
     printf ("Hi there %s! \n", fName);
-    
+
     //the next two lines are equivalent
     printf ("fName[3]: %c \n", fName[3]);
     printf ("fName[3]: %c \n", *(fName + 3));
 
+
     //you can assign an entire string to a character pointer
     char * lName = "Harris";
     printf("Hi, %s %s! \n", fName, lName);
-
 
     //input expects a character POINTER type
     //but a char array is already this type
@@ -44,8 +44,11 @@ int main(){
 
     //copying a string does NOT do what you expect!
     //fName = lName;
-    //that copies the value of one pointer to another!
 
+    //printf("%s %s", fName, lName);
+
+
+    //that copies the value of one pointer to another!
     //comparing strings also doesn't work as expected!
     char strA[10] = "Joe";
     char strB[10] = "Joe";
@@ -55,6 +58,8 @@ int main(){
     } else {
       printf ("They are different! \n");
     } // end if
+
+
     //previous statement was checking the ADDRESSES
     //use strcmp for true equality
     //strcmp returns 0 if they are the same
@@ -78,5 +83,6 @@ int main(){
 
     //rest of string is in memory but not displayed
     printf ("%c \n", realName[5]);
+
 
 } // end main

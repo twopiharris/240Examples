@@ -16,6 +16,7 @@ int main(){
 
   //integers can be output as decimal, hex (%x), or octal(%o)
   printf ("%d %x %o \n", integer, integer, integer);
+
   //you can determine width of floats
   //but decimal output makes no sense
   printf ("%f %4.2f %d \n", pi, pi, pi);
@@ -53,4 +54,5 @@ int main(){
 
   printf ("%s\n", otherThing);
   return(0);
+
 } // end main3

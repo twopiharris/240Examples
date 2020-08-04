@@ -16,7 +16,7 @@ int main(){
 
   printf("here's the full line of data: \n");
   printf("%s \n", data);
-
+  
   // sscanf scans a string as if it was input from the console
   sscanf(data, "%s %s %d", first, last, &age);
 

@@ -15,7 +15,7 @@ int main(){
   for (i = 0; i < SIZE; i++){
     printf("%d) %d \n", i, score[i]);
   } // end for
-
+  
   //alternate way to define and fill array
   int par[SIZE];
   par[0] = 2;
@@ -41,6 +41,7 @@ int main(){
   //isn't really part of the array?
   printf("Garbage: %d\n", *(score + 5));
 
+  return(0);
 } // end main
 
 

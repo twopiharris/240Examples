@@ -16,10 +16,12 @@ int main(){
     printf("value AT pA: %d \n", *pA);
     //printf("value AT a: %d \n", *a);
 
+
     // You can have a pointer to a pointer!
     int ** ppA = &pA;
     printf("value OF ppA: %d \n", ppA);
     printf("value AT ppA: %d \n", *ppA);
     printf("value AT value AT ppA: %d \n", **ppA);
+
 } // end main
 
