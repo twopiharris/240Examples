@@ -15,6 +15,7 @@ enum boolean {False, True};
 
 main(){
 
+
     boolean x = False;
     if(x){
         std::cout << "True" << std::endl;

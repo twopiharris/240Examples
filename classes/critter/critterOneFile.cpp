@@ -40,9 +40,13 @@ class Car {
       Car::driver = driver;
     } // end setDriver
 
+    Critter getDriver(){
+      return driver;
+    } // end getDriver
+
     std::string getDriverName(){
       return driver.getName();
-    } // end getDriver
+    } // end getDriverName
 
 }; // end car class def
 
