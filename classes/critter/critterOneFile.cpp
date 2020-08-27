@@ -25,7 +25,7 @@ class Critter {
     } // end getName
 
     std::string sayHi(){
-      std::cout << "Hi. My name is " << name << "." << std::endl;
+      std::cout << "Hi, my name is " << name << "." << std::endl;
     } // end sayHi
 
 }; // end critter class def
@@ -60,8 +60,7 @@ int main(){
   critter: George
   critter d: Harold
   Hi, my name is Harold
-
-  *driver: George*
+  driver: George
   */
 
 
@@ -76,12 +75,10 @@ int main(){
 
   d.sayHi();
 
-/*
   //creating a car
   Car theCar;
   theCar.setDriver(c);
   std::cout << "driver: " << theCar.getDriverName() << std::endl;
-*/
 
 } // end main
 
