@@ -3,7 +3,6 @@
 
 #include <string>
 #include <iostream>
-//using namespace std;
 
 class Critter {
   private:
@@ -24,6 +23,11 @@ class Critter {
     std::string getName(){
       return name;
     } // end getName
+
+    std::string sayHi(){
+      std::cout << "Hi. My name is " << name << "." << std::endl;
+    } // end sayHi
+
 }; // end critter class def
 
 class Car {
@@ -51,6 +55,16 @@ class Car {
 }; // end car class def
 
 int main(){
+  /* expected output:
+
+  critter: George
+  critter d: Harold
+  Hi, my name is Harold
+
+  *driver: George*
+  */
+
+
   //testing no parameter constructor
   Critter c;
   c.setName("George");
@@ -60,9 +74,14 @@ int main(){
   Critter d = Critter("Harold");
   std::cout << "critter d: " << d.getName() << std::endl;
 
+  d.sayHi();
+
+/*
   //creating a car
   Car theCar;
   theCar.setDriver(c);
   std::cout << "driver: " << theCar.getDriverName() << std::endl;
+*/
+
 } // end main
 
