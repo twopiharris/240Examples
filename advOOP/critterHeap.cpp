@@ -5,7 +5,7 @@
 class Critter {
   private:
     // name is NOT a string, but a pointer to a string
-    std::string *name;
+    std::string* name;
   public:
     Critter();
     Critter(std::string name);
@@ -31,7 +31,7 @@ Critter::~Critter(){
   //name is on heap, so it should be deleted
   delete name;
   // you aren't deleting the pointer 'name',
-  // but the stack data that 'name' is pointing to
+  // but the heap data that 'name' is pointing to
 }
 
 void Critter::setName(std::string name){
@@ -55,10 +55,15 @@ int main(){
   // pointing to the critter data on the heap
   // use -> to use methods of pointed class
   // without explicit dereferencing
+
+  //this is illegal: c.setName("George");
+
+  //this is fine, but awkward
+
   c->setName("George");
   std::cout << c->getName() << std::endl;
 
-  // delete the stack data
+  // delete the heap data
   delete(c);
 
   // pointer will be destroyed when function goes
