@@ -10,11 +10,11 @@ main(){
   int grade = 0;
   double average = 0;
 
-  cout << "enter a grade: (ctl-D to exit)";
+  std::cout << "enter a grade: (ctl-D to exit)";
   while (std::cin >> grade){
     count++;
     total += grade;
-    cout << "enter a grade: ";
+    std::cout << "enter a grade: ";
   } // end while
 
   average = total / count;
