@@ -3,6 +3,7 @@
 //If a class uses heap variables,
 //the default shallow copy may not be sufficient.
 
+#include <iostream>
 #include <cstdio>
 #include <cstring>
 
@@ -40,16 +41,20 @@ class A{ // standard class w/out copy constructor
 int main(){
   //instantiate A
   A a;
+  std::cout << "A's name should be Fred" << std::endl;
   a.greet();
 
   //shallow copies seem to work fine with heap variables too...
   A anotherA = a;
+  std::cout << "Since anotherA is a copy, it will also be Fred" << std::endl;
   anotherA.greet();
 
   //but when we change the name of a...
   a.setName("George");
+  std::cout << "A's name should now be George" << std::endl;
   a.greet();
   //...the name of anotherA also changes
+  std::cout << "AnotherA's name should NOT be George" << std::endl;
   anotherA.greet();
   return 0;
 } // end main
