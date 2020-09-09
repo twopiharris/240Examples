@@ -1,9 +1,10 @@
 # 240-Examples
 
-## headline 2
-All sample programs from CS 240
-Hi this is text
+## Algorithm files
 
-* one
-* two
-* three
+For each function, you should have
+
+* brief text description
+* input 
+* output 
+* step-by-step
