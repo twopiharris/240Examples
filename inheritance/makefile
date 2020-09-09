@@ -4,7 +4,7 @@ glitter: critter.o glitterCritter.o main.o
 critter.o: critter.cpp critter.h
 	g++ -g -c critter.cpp
 
-glitterCritter.o: glitterCritter.cpp glitterCritter.h
+glitterCritter.o: glitterCritter.cpp glitterCritter.h critter.h
 	g++ -g -c glitterCritter.cpp
 
 main.o: critter.h glitterCritter.h

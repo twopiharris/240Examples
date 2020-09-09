@@ -1,7 +1,5 @@
 #include <cstdio>
 
-using namespace std;
-
 void swapNum(int* i, int* j){
   int temp = *i;
   *i = *j;

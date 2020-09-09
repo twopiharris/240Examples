@@ -1,5 +1,7 @@
+#include <iostream>
 #include "critter.h"
 #include "glitterCritter.h"
+
 
 int main(){
   Critter c;
@@ -10,5 +12,4 @@ int main(){
   g.shimmer();
 } // end main
 
-  
   

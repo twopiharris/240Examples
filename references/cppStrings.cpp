@@ -1,8 +1,6 @@
 //cppStrings.cpp
 #include <iostream>
 
-//using namespace std;
-
 main(){
     //C++ strings are objects, built into std namespace
     //very similar to Java String objects

@@ -6,7 +6,7 @@
 
 void addOne(int var);
 void addOnePointer(int* var);
-void addOneRef(int& varPtr);
+void addOneRef(int& varRef);
 
 int main(){
 
