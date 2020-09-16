@@ -1,0 +1,48 @@
+//passing by value and reference
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+void addOne(int var);
+void addOnePointer(int &var);
+
+main(){
+
+  //add one by value
+  cout << "===== By Value =====" << endl;
+  int a = 2;
+  cout << "a before: " << a << endl;
+  addOne(a);
+  cout << "a after: " << a << endl;
+  cout << endl;
+
+  //add one by reference
+  cout << "===== By Reference =====" << endl;
+  a = 2;
+  cout << "a before: " << a << endl;
+  addOnePointer(a);
+  cout << "a after: " << a << endl;
+  cout << endl;
+
+  return 0;
+} // end main
+
+void addOne(int var){
+  //pass by value
+  //take a normal variable as parameter
+  //only the value from the variable is kept.
+  //changing the value doesn't affect original variable
+  var++;
+  cout << "var during addOne: " << var << endl;
+} // end addOne
+
+void addOnePointer(int &var){
+  //pass by reference
+  //takes address of variable as a parameter
+  //'automatically' creates a variable associated with that address
+  //changing the variable changes whatever variable was associated with the original address
+  //pointer goes out of scope, but thing pointed to was never 'in' scope.
+  var++;
+  cout << "var during addOnePointer: " << var << endl;
+} // end addOne Pointer

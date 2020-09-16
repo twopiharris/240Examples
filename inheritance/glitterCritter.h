@@ -14,7 +14,7 @@ class GlitterCritter: public Critter {
     void shimmer();
 
     // this is over-writing the Critter class' say Hi
-    //void sayHi();
+    void sayHi();
 };
 
 #endif
