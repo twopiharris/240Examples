@@ -3,8 +3,6 @@
 #include <string>
 #include <iostream>
 
-//using namespace std;
-
 void changeName();
 class Critter {
   //note there is no external way to change the name

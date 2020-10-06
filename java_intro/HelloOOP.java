@@ -12,7 +12,7 @@ public class HelloOOP{
     public HelloOOP(){
         //constructor
         Scanner input = new Scanner(System.in);
-        System.out.println("What is your name? ");
+        System.out.print("What is your name? ");
         String userName = input.nextLine();
         System.out.println("Hi there, " + userName + "!");
     } // end constructor

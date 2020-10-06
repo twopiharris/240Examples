@@ -22,7 +22,7 @@ Critter::Critter(){
 }
 
 Critter::Critter(std::string name){
-  Critter::name = new std::string(name);
+  *Critter::name = new std::string(name);
 }
 
 Critter::~Critter(){

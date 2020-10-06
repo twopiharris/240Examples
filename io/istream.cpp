@@ -10,17 +10,16 @@ int main(){
   std::cin.get(c);
   std::cout << "Your character: " << c << std::endl;
 
+  std::cout << "Get a line at a time: " << std::endl;
+
   std::string goofy;
   std::cin >> goofy;
-
-  std::cout << "Get a line at a time: " << std::endl;
 
   std::cout << goofy << std::endl;
 
   //clean out cin to remove previous values...
   //discard up to 80 characters or newline
-  //cin.ignore(80, '\n');
-  std::cin.ignore();
+  std::cin.ignore(80, '\n');
 
   std::cout << "Please enter your full name: ";
 

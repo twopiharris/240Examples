@@ -14,7 +14,10 @@ int main(){
 
   inFile.open("numString.dat");
   while (getline(inFile, currentLine)){
-    std::cout << currentLine << std::endl;
+    // before processing, I like to print each line raw to see what
+    // I'm working with
+    //std::cout << currentLine << std::endl;
+
     //clear the stringstream
     converter.clear();
     converter.str("");
