@@ -7,7 +7,7 @@ int A[] = {1, 4, 2, 8, 5, 7};
 const int N = sizeof(A) / sizeof(int);
 
 int main(){
-       
+         
 	printArray();
 
 
