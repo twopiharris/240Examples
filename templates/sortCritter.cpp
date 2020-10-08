@@ -23,6 +23,8 @@ int main(){
   std::cout << std::endl << "sorted by age: " << std::endl;
   std::sort(c, c + NUM_CRITTERS, sortByAge);
   printArray(c, NUM_CRITTERS);
+
+  delete[] c;
 }
 
 bool sortByName(Critter& a, Critter& b){
