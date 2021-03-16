@@ -53,7 +53,6 @@ int main(){
 
   std::cout << std::endl << std::endl;
 
-
   //alternate input
   inFile.open("example.dat");
   
@@ -65,8 +64,7 @@ int main(){
     std::cout << "Now we need " << item << std::endl;
   } // end while
   inFile.close();
-
-
+  
   return 0;
 
 } // end main
