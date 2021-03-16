@@ -45,7 +45,7 @@ int main(){
   auto c2 = std::make_shared<Critter>("Bob", 6);  
   auto c3 = c2;
 
-  // c2 and c3 are both local pointers to the same stack object
+  // c2 and c3 are both local pointers to the same heap object
   c2->setName("Martha");
   c3->greet();  
 

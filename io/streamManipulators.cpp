@@ -7,7 +7,7 @@ int main(){
   //uses oct, hex, or dec
   int n = 15;
   std::cout << std::hex << n << std::endl;
-
+  
   //managing precision
   double pi = 3.1415927;
   std::cout.precision(4);
@@ -26,8 +26,6 @@ int main(){
   std::cout << "Bill";
   std::cout.width(10);
   std::cout << "Gates" << std::endl;
-
-
 
   return 0;
 } // end main

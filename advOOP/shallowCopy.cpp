@@ -3,7 +3,6 @@
 #include <cstdio>
 #include <cstring>
 
-//using namespace std;
 
 class A{ // standard class w/out copy constructor
   private:
@@ -29,6 +28,7 @@ class A{ // standard class w/out copy constructor
 }; // end A class def
 
 int main(){
+  printf("Expecting Fred, Fred, George, Fred \n");
   //instantiate A
   A a;
   a.greet();

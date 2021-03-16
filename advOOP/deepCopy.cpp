@@ -4,6 +4,7 @@
 
 #include <cstdio>
 #include <cstring>
+#include <iostream>
 
 //using namespace std;
 
@@ -50,6 +51,7 @@ class A{ // standard class w/out copy constructor
 int main(){
   //instantiate A
   A a;
+  std::cout << "A's name should be Fred" << std::endl;
   a.greet();
 
   //If A has heap variables, it's possible they haven't been initialized
@@ -58,15 +60,18 @@ int main(){
   //members from the original. This is called a 'deep copy,' and it's used
   //whenever the class uses pointers or heap-based data members.
   A anotherA = a;
+  std::cout << "AnotherA is a copy of A so it should also have the name Fred" << std::endl;
   anotherA.greet();
 
   //now because the actual data values have new memory on the heap,
   //each instance of the class has its own heap space for member data
   //changing the value of a...
   a.setName("George");
+  std::cout << "After changing A's name, it should now be George" << std::endl;
   a.greet();
 
   //...doesn't modify the value of anotherA
+  std::cout << "... but anotherA should still be Fred." << std::endl;
   anotherA.greet();
 
   return 0;

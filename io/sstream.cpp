@@ -18,6 +18,7 @@ int main(){
   //use the str() method to get the data out of the stream
   std::cout << ss.str();
 
+
   //you can get values back!
 
   ss >> text;
