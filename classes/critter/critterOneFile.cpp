@@ -24,7 +24,7 @@ class Critter {
       return name;
     } // end getName
 
-    std::string sayHi(){
+    void sayHi(){
       std::cout << "Hi, my name is " << name << "." << std::endl;
     } // end sayHi
 

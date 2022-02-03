@@ -43,6 +43,7 @@ main(){
   Critter c1("Ada");
   c1.sayHi();
 
+  return(0);
 
 
 } // end main

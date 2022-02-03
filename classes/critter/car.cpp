@@ -1,11 +1,10 @@
 //car.cpp
 
-//this is a new comment
-
-
 #include <string>
 #include "critter.h"
 #include "car.h"
+
+// I added a comment
 
 Car::Car(){
   //add a default critter

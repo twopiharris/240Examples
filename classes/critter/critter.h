@@ -3,7 +3,6 @@
 #define CRITTER_H_EXISTS
 
 #include <string>
-//using namespace std;
 
 class Critter {
   private:

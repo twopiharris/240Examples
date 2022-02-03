@@ -3,8 +3,6 @@
 #include <iostream>
 #include "critter.h"
 
-//using namespace std;
-
 Critter::Critter(){
   Critter::name = "anonymous";
 } // end constructor
