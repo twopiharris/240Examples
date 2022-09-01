@@ -11,7 +11,7 @@ class LinkedList
         LinkedList();
         void buildList();
         void traverse();
-        virtual ~LinkedList();
+        ~LinkedList();
 };
 
 #endif // LINKEDLIST_H

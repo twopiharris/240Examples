@@ -7,7 +7,7 @@ critter.o: critter.cpp critter.h
 glitterCritter.o: glitterCritter.cpp glitterCritter.h critter.h
 	g++ -g -c glitterCritter.cpp
 
-main.o: critter.h glitterCritter.h
+main.o: critter.h glitterCritter.h main.cpp
 	g++ -g -c main.cpp
 
 run: glitter

@@ -22,7 +22,7 @@ Critter::Critter(){
 }
 
 Critter::Critter(std::string name){
-  *Critter::name = new std::string(name);
+  Critter::name = new std::string(name);
 }
 
 Critter::~Critter(){
@@ -36,7 +36,8 @@ Critter::~Critter(){
 
 void Critter::setName(std::string name){
   // name is a pointer, so set its value to the parameter
-  *Critter::name = name;
+  //*Critter::name = name;
+  this->name = name;
   // the pointer (Critter::name) remains on stack, 
   // but it points to data on the heap
 }
@@ -59,6 +60,7 @@ int main(){
   //this is illegal: c.setName("George");
 
   //this is fine, but awkward
+  //(*c).setName("George");
 
   c->setName("George");
   std::cout << c->getName() << std::endl;
@@ -68,7 +70,6 @@ int main(){
 
   // pointer will be destroyed when function goes
   // out of scope
-
   // critter array is built on heap
   Critter *cA = new Critter[3];
   
@@ -80,4 +81,6 @@ int main(){
   // than for a single element 
   // (because the array is a pointer to an array of pointers)
   delete[] cA;
+
 }
+

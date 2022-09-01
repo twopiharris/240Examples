@@ -7,7 +7,7 @@ int main(){
 
   scanf("%s", name);
 
-  printf("Hello, %s!", name);
+  printf("Hello, %s! \n", name);
 
   return(0);
 } // end main

@@ -18,7 +18,6 @@ int main() {
     LinkedList ll;
 
     ll.buildList();
-    //ll.traverse();
 
     return(0);
 }

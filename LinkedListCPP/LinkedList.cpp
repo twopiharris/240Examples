@@ -10,13 +10,15 @@ LinkedList::LinkedList()
 }
 
 void LinkedList::buildList(){
-    Node c = Node("Charlie", NULL);
-    Node b = Node("Bravo", &c);
-    Node a = Node("Alpha", &b);
+    Node* c = new Node("Charlie", NULL);
+    Node* b = new Node("Bravo", c);
+    Node* a = new Node("Alpha", b);
 
-    head = &a;
+    head = a;
 
 } // end buildList
+
+
 
 void LinkedList::traverse(){
     Node * currentNode;
@@ -32,7 +34,16 @@ void LinkedList::traverse(){
 } // end traverse
 
 
+
 LinkedList::~LinkedList()
 {
-    //dtor
+    // delete list
+    Node* next = head;
+    Node* current = next;
+    while (current != NULL){
+      next = current->getNext();
+      if (current != NULL){
+        delete current;
+      } // end if
+    } // end while
 }

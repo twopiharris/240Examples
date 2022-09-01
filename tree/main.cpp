@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Node.h"
 
-void buildSample();
+//void buildSample();
 void inOrder(Node * n);
 void preOrder(Node * n);
 void postOrder(Node * n);

@@ -29,18 +29,19 @@ int main(){
   //array is actually a pointer to the first element!
   printf("score for 0: %d\n", *score);
   // this line actually shows the address of the first element
-  printf("score: %d", score);
+  printf("score: %p \n", score);
   // this line shows the address of the next element (still not useful)
-  printf("score + 1: %d", score + 1);
+  printf("score + 1: %p \n", score + 1);
 
-  printf("score for 1: %d\n", *(score + 1));
+  printf("score for 1: %d \n", *(score + 1));
   //be careful with order of operations!!
   printf("NOT score for 1: %d\n", *score + 1);
 
+/*
   //What if you try to print something that
   //isn't really part of the array?
-  printf("Garbage: %d\n", *(score + 5));
-
+  printf("Garbage: %d \n", *(score + 5));
+*/
   return(0);
 } // end main
 

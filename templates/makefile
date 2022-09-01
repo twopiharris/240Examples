@@ -8,8 +8,8 @@ sortCritter.o: critter.h sortCritter.cpp
 	g++ -c sortCritter.cpp
 
 clean:
-	rm sortDemo
 	rm *.o
+	rm sortDemo
 
 run: sortDemo
 	./sortDemo

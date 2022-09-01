@@ -31,11 +31,9 @@ bool sortByName(Critter& a, Critter& b){
   return(a.getName() < b.getName());
 }
 
-bool sortByAge(Critter&a, Critter& b){
+bool sortByAge(Critter& a, Critter& b){
   return(a.getAge() < b.getAge());
 }
-
-
 
 void printArray(Critter* c, int length){
   for (int i = 0; i < length; i++){

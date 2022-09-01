@@ -28,6 +28,7 @@ main(){
     }
    //Handler
    } catch(zero){
-    std::cout << "DIVIDE BY ZERO -- ERROR!!\n"; exit(-1);
+     std::cout << "DIVIDE BY ZERO -- ERROR!!\n"; 
+     exit(-1);
    } // end try
 } // end main

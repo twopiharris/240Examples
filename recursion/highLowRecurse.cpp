@@ -5,7 +5,6 @@
 
 #include <iostream>
 
-using namespace std;
 
 void hlRecurse(int lower, int upper);
 
@@ -17,11 +16,11 @@ int main(){
 void hlRecurse(int lower, int upper){
   char input;
   int mid = (int)((lower + upper)/2);
-  cout << "I guess " << mid << endl;
-  cout << "too (h)igh?" << endl;
-  cout << "too (l)ow?" << endl;
-  cout << "or (c)orrect?" << endl;
-  cin >> input;
+  std::cout << "I guess " << mid << std::endl;
+  std::cout << "too (h)igh?" << std::endl;
+  std::cout << "too (l)ow?" << std::endl;
+  std::cout << "or (c)orrect?" << std::endl;
+  std::cin >> input;
   
   if (input == 'h'){
     hlRecurse(lower, mid);    
@@ -29,9 +28,9 @@ void hlRecurse(int lower, int upper){
     hlRecurse(mid, upper);
   } else if (input == 'c'){
     // do nothing. base case
-    cout << "You win!" << endl;
+    std::cout << "You win!" << std::endl;
   } else {
-    cout << "that is not a valid response" << endl;
+    std::cout << "that is not a valid response" << std::endl;
     hlRecurse(lower, upper);
   } // end if
 }
