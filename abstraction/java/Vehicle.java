@@ -1,6 +1,6 @@
 public abstract class Vehicle {
   int numberOfWheels = 4;
-  
+ 
   public Vehicle(){
     
   }

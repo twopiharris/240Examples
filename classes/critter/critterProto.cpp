@@ -1,5 +1,5 @@
 //critterProto.cpp
-//seperating code from prototypes in a single file
+//separating code from prototypes in a single file
 
 #include <string>
 #include <iostream>

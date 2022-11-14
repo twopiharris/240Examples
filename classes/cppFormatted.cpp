@@ -10,12 +10,12 @@
 
 class Student {
     private:
-        std::string name;
+      std::string name;
     public:
       Student();
       Student(std::string);
-  void setName(std::string);
-  std::string getName();
+      void setName(std::string);
+      std::string getName();
 }; // end class def
 
 //functions defined seperate from class definition!

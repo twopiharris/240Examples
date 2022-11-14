@@ -37,6 +37,7 @@ std::ostream& operator<<(std::ostream& os, const complex& c){
   //define easy way to add this class to an output
   //stream
   os << "real: " << c.real << ", ima: " << c.ima << std::endl;
+  return os;
 } // end stream overload
 
 int main() {

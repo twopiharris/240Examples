@@ -59,6 +59,6 @@ int main(){
   AddThings<float> atf(3.1, 4.2, 5.6);
   std::cout << atf.getSum() << std::endl;
 
-  AddThings<std::string> ats("this", "is", "fun");
+  AddThings<std::string> ats("this ", "is ", "fun!");
   std::cout << ats.getSum() << std::endl;
 }

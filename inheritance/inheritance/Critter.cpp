@@ -18,6 +18,7 @@ void Critter::greet(){
   std::cout << "My name is " << Critter::name << std::endl;
 } // end greet
 
+/*
 int main(){
 
   std::cout << "main class: ";
@@ -26,4 +27,4 @@ int main(){
 
   return 0;
 }
-
+*/

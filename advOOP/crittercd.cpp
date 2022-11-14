@@ -1,49 +1,54 @@
 //Critter with constructor and destructor
 #include <iostream>
-#include <cstring>
+#include <string>
 
 //using namespace std;
 
 class Critter {
   private:
-    char *name;
+    std::string* name;
   public:
     Critter();
-    Critter(char *name);
+    Critter(std::string name);
     ~Critter();
-    void setName(char *name);
-    char* getName();
+    void init(std::string name);
+    void setName(std::string name);
+    std::string getName();
 }; // end class def
 
 Critter::Critter(){
   //new operator creates variables on the heap
-  name = new char[50];
-  strcpy(name,"anonymous");
+  Critter::name = new std::string("anonymous");
 }
 
-Critter::Critter(char *name){
-  name = new char[50];
-  strcpy(Critter::name, name);;
+Critter::Critter(std::string name){
+  Critter::setName(name);
 }
 
 Critter::~Critter(){
   //destructor is called when class is deleted
-  std::cout << "I confess I breathe my last..." << std::endl;
+  std::cout << *name << " confesses I breathe my last..." << std::endl;
   //name is on heap, so it should be deleted
-  delete[] name;
+  delete name;
 }
 
-void Critter::setName(char *name){
-  strcpy(Critter::name, name);
+void Critter::init(std::string name){
+  Critter::setName(name);
 }
 
-char* Critter::getName(){
-  return name;
+void Critter::setName(std::string name){
+  *Critter::name = name;
+}
+
+std::string Critter::getName(){
+  return *Critter::name;
 }
 
 int main(){
   //build a single Critter on heap
   Critter* c = new Critter();
+
+
 
   // c is a critter POINTER on the stack
   // pointing to the critter data on the heap
@@ -58,8 +63,20 @@ int main(){
   // pointer will be destroyed when function goes
   // out of scope
 
+  int numCritters = 3;
+
   //critter array is built on heap
-  Critter *cA = new Critter[3];
+  Critter *cA = new Critter[numCritters];
+
+  std::string names[] = {"zero", "one", "two"};
+  
+  // you can use an initializer as a secondary constructor
+  for (int i = 0; i < 3; i++){
+    // array elements are not pointers, don't need to be dereferenced.
+    cA[i].init(names[i]);
+  } // end for
+
+
   //delete critter array.
   delete[] cA;
 }

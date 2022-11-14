@@ -3,10 +3,14 @@
 #include <iostream>
 #include <string>
 
-class student {
+class Student {
     private:
         std::string name;
     public:
+        Student(){
+            name = "anonymous";
+        }
+
         void setName(std::string tName){
             name = tName;
         } // end setName
@@ -18,9 +22,11 @@ class student {
 //don't forget semicolon at end of class def!
 
 
-main(){
-    student s1;
+int main(){
+    Student s1;
+    std::cout << "Name: " << s1.getName() << std::endl;
     s1.setName("John");
     std::cout << "Name: " << s1.getName() << std::endl;
 
+    return 0;
 } // end main

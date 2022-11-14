@@ -15,7 +15,7 @@ struct date{
   int year;
 };
 
-main(){
+int main(){
     date today;
     today.day = 2;
 
@@ -25,4 +25,5 @@ main(){
     std::cout << "Day: " << today.day
          << ", Month: " << today.month
          << ", Year: " << today.year << std::endl;
+    return(0);
 } // end main

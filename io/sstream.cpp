@@ -5,7 +5,7 @@
 
 int main(){
   //"adding" string and numeric values doesn't work...
-  //string phrase = "I am " + 28 + " years old";
+  //std::string phrase = "I am " + 28 + " years old";
   //std::cout << phrase << std::endl;
   
   std::string text;
@@ -23,7 +23,7 @@ int main(){
 
   ss >> text;
   std::cout << text << std::endl;
-
+  
   ss >> text;
   std::cout << text << std::endl;
 
@@ -36,7 +36,7 @@ int main(){
   //a zero
   ss >> number;
   std::cout << number << std::endl;
-
+  
   return 0;
 } // end main
 

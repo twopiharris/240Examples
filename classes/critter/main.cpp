@@ -6,7 +6,7 @@
 int main(){
   std::cout << "Hi there!" << std::endl;
   Critter c;
-  std::string myCritterName = "Joshua";
+  std::string myCritterName = "Emmert";
   c.setName(myCritterName);
   std::cout << c.getName() << std::endl;
 

@@ -18,4 +18,4 @@ debug: glitter
 
 clean:
 	rm *.o
-
+	rm glitter

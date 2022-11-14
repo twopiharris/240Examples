@@ -7,3 +7,10 @@ Critter.o: Critter.cpp Critter.h
 main.o: main.cpp Critter.h
 	g++ -c main.cpp
 
+run: CritterDemo
+	./CritterDemo
+
+clean:
+	rm CritterDemo
+	rm *.o
+
