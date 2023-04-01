@@ -13,7 +13,8 @@ public class Critter {
 		c.setName("George");
 		c.sayHi();
 		System.out.println(c.getName());
-		
+		//System.out.println(c);	
+	
 		//test single param constructor
 		c = new Critter("Martha");
 		c.sayHi();

@@ -38,6 +38,7 @@ void Critter::setName(std::string name){
   // name is a pointer, so set its value to the parameter
   //*Critter::name = name;
   this->name = name;
+
   // the pointer (Critter::name) remains on stack, 
   // but it points to data on the heap
 }

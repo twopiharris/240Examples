@@ -2,8 +2,6 @@
 #include <iostream>
 #include <string>
 
-//using namespace std;
-
 class Critter {
   private:
     std::string* name;
@@ -48,8 +46,6 @@ int main(){
   //build a single Critter on heap
   Critter* c = new Critter();
 
-
-
   // c is a critter POINTER on the stack
   // pointing to the critter data on the heap
   // use -> to use methods of pointed class
@@ -57,7 +53,7 @@ int main(){
   c->setName("George");
   std::cout << c->getName() << std::endl;
 
-  // delete the stack data
+  // delete the heap data
   delete(c);
 
   // pointer will be destroyed when function goes
@@ -66,7 +62,7 @@ int main(){
   int numCritters = 3;
 
   //critter array is built on heap
-  Critter *cA = new Critter[numCritters];
+  Critter* cA = new Critter[numCritters];
 
   std::string names[] = {"zero", "one", "two"};
   
@@ -77,6 +73,6 @@ int main(){
   } // end for
 
 
-  //delete critter array.
+//delete critter array.
   delete[] cA;
 }

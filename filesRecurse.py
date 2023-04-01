@@ -14,7 +14,7 @@
 import os
 
 def listFiles(dir):
-  print "_____%s_____" % dir
+  print ("_____{}_____".format(dir))
   for fileName in os.listdir(dir):
     print(fileName)
     fullFileName = os.path.join(dir, fileName)
@@ -22,9 +22,11 @@ def listFiles(dir):
       #in some os, . and .. will appear
       #these are current and parent directories
       #which will cause infinite recursion!
+      #also skip hidden directories, or we'll see all git info
       if fileName != ".":
         if fileName != "..":
-          listFiles(fullFileName)
+          if not fileName.startswith("."):
+            listFiles(fullFileName)
 
 def main():
   listFiles(".")

@@ -1,6 +1,6 @@
 
 public class Node {
-    //node for a linked list
+    //node for a binary tree
 	private String data;
 	private Node left;
 	private Node right;

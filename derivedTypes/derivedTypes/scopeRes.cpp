@@ -5,7 +5,7 @@
 //i is declared globally (outside any functions)
 int i = 1;
 
-main(){
+int main(){
     std::cout << "The value of i is " << i << std::endl;
 
     //i is also declared (with a different value) inside main!
@@ -18,4 +18,6 @@ main(){
 
     //the :: operator resolves to the global scope
     std::cout << "global i: " << ::i << std::endl;
+
+    return 0;
 } // end main

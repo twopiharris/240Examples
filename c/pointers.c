@@ -7,7 +7,7 @@ int main(){
     // with & operator
     int a = 5;
     printf("value of a: %d \n", a);
-    //printf("address of a: %d \n", &a);
+    //printf("address of a: %p \n", &a);
     //printf("address of a: %d \n", (int)&a);
     //printf("address of a: %x \n", (int)&a);
     printf("address of a: %p \n", &a);

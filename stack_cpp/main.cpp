@@ -2,15 +2,15 @@
 #include "node.h"
 #include "stack.h"
 
-using namespace std;
+//using namespace std;
 
 void testStack();
 void testNode();
 void invert();
 
 int main(){
-  //testNode();
-  //testStack();
+  testNode();
+  testStack();
   invert();
   return 0;
 }
@@ -22,9 +22,9 @@ void testNode(){
   Node* c = new Node("C", b);
   a->setNextNode(c);
 
-  cout << a->getPayload() << endl;
-  cout << b->getPayload() << endl;
-  cout << a->getNextNode()->getPayload() << endl;
+  std::cout << a->getPayload() << std::endl;
+  std::cout << b->getPayload() << std::endl;
+  std::cout << a->getNextNode()->getPayload() << std::endl;
 
   // should be "Hi there, B, C" on seperate lines
   
@@ -40,12 +40,12 @@ void testStack(){
   s->push(new Node("B"));
   s->push(new Node("C"));
 
-  cout << s->print() << endl;
+  std::cout << s->print() << std::endl;
 
   Node* d = s->pop();
   delete(d);
 
-  cout << s->print() << endl;
+  std::cout << s->print() << std::endl;
   delete(s);
 } // end testStack
 
@@ -60,9 +60,9 @@ void invert(){
   a->push(new Node("B"));
   a->push(new Node("C"));
 
-  cout << "===== before =====" << endl;
-  cout << "===== A =====" << endl << a->print() << endl;
-  cout << "===== B =====" << endl << b->print() << endl;
+  std::cout << "===== before =====" << std::endl;
+  std::cout << "===== A =====" << std::endl << a->print() << std::endl;
+  std::cout << "===== B =====" << std::endl << b->print() << std::endl;
 
   //a = a->invert();
   
@@ -80,17 +80,17 @@ void invert(){
     } // end if
   } // end while
   //print results
-  cout << "===== after =====" << endl;
-  cout << "===== A =====" << endl << a->print() << endl;
-  cout << "===== B =====" << endl << b->print() << endl;
+  std::cout << "===== after =====" << std::endl;
+  std::cout << "===== A =====" << std::endl << a->print() << std::endl;
+  std::cout << "===== B =====" << std::endl << b->print() << std::endl;
 
   Stack* temp = a;
   a = b;
   b = temp;
 
-  cout << "===== after swap =====" << endl;
-  cout << "===== A =====" << endl << a->print() << endl;
-  cout << "===== B =====" << endl << b->print() << endl;
+  std::cout << "===== after swap =====" << std::endl;
+  std::cout << "===== A =====" << std::endl << a->print() << std::endl;
+  std::cout << "===== B =====" << std::endl << b->print() << std::endl;
 
   delete(a);
   delete(b);

@@ -1,4 +1,4 @@
-/** LLString.java:w
+/** LLString.java
     doubly-linked list
 *   works with a generic node type
 */

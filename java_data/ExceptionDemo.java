@@ -15,7 +15,8 @@ public class ExceptionDemo{
           System.out.println("Please enter a number");
 	  String strX = input.nextLine();
           x = Integer.parseInt(strX);
-	  y = input.nextInt();
+	  System.out.print("Another number: ");
+          y = input.nextInt();
 	  quotient = x / y;
         } catch (NumberFormatException e){
 	    System.out.println("Dude. That's not a number...");

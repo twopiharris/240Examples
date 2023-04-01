@@ -22,6 +22,8 @@ int main(){
     today.month = "Sep";
     today.year = 2010;
 
+    //std::cout << today;
+
     std::cout << "Day: " << today.day
          << ", Month: " << today.month
          << ", Year: " << today.year << std::endl;
