@@ -23,12 +23,14 @@ public class Crypto {
           System.out.println("Please enter unencrypted phrase");
           String plain = input.nextLine();
           plain = plain.toUpperCase();
+          System.out.print("Encoded message: ");
           System.out.println(encrypt(plain));
 
         } else if (response.equals("2")){
           System.out.println("Please enter encrypted phrase");
           String code = input.nextLine();
           code = code.toUpperCase();
+          System.out.print("Decrypted message: ");
           System.out.println(decrypt(code));
 
         } else if (response.equals("0")){
