@@ -7,7 +7,7 @@
 #define FALSE 0;
 
 int main(){
-  char guess[20] = "CS24000";
+  char guess[20] = "CS121";
   char correct[20];
   int tries = 0;
 
