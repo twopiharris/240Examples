@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Crypto {
-
+  // for now, key is hard-wired in.
   Scanner input = new Scanner(System.in);
   String alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   String key =   "UBWKOVGAPRFJLCQHZENSXDMYTI";
